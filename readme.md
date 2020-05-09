@@ -4,4 +4,5 @@
 ### Feature
 - Router
     - "/Note" [GET, POST]
+    - "/User" [GET, POST]
 - Chaining Middleware

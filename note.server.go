@@ -5,6 +5,11 @@ import (
 	"net/http"
 )
 
+type Note struct {
+	Title string `json:"title"`
+	Note  string `json:"note"`
+}
+
 type NoteStore interface {
 	InsertNote(note Note)
 	GetAllNotes() Notes

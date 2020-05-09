@@ -1,18 +1,12 @@
 package main
 
-//Note object type
-type Note struct {
-	Title string `json:"title"`
-	Note  string `json:"note"`
-}
-
 type MemoryNoteStore struct {
 	store Notes
 }
 
 type Notes []Note
 
-func NewNoteStore() *MemoryNoteStore {
+func NewMemoryNoteStore() *MemoryNoteStore {
 	return &MemoryNoteStore{}
 }
 
