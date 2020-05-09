@@ -3,6 +3,7 @@
 
 ### Feature
 - Router
-    - "/Note" [GET, POST]
-    - "/User" [GET, POST]
+    - "/note" [GET, POST]
+    - "/user" [GET, POST]
+    - "/login" [POST]
 - Chaining Middleware

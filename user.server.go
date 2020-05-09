@@ -11,7 +11,7 @@ type User struct {
 }
 
 type UserStore interface {
-	GetUserByUsername(username string) User
+	GetUserByUsername(username string) (User, bool)
 	InsertUser(user User)
 }
 
@@ -22,7 +22,7 @@ type UserServer struct {
 func (u *UserServer) getUser(w http.ResponseWriter, r *http.Request) {
 	var user User
 	json.NewDecoder(r.Body).Decode(&user)
-	res := u.store.GetUserByUsername(user.Username)
+	res, _ := u.store.GetUserByUsername(user.Username)
 	json.NewEncoder(w).Encode(res)
 }
 

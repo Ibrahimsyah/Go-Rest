@@ -17,6 +17,7 @@ func (u *MemoryUserStore) InsertUser(user User) {
 	fmt.Println(u.store)
 }
 
-func (u *MemoryUserStore) GetUserByUsername(username string) User {
-	return u.store[username]
+func (u *MemoryUserStore) GetUserByUsername(username string) (User, bool) {
+	user, exists := u.store[username]
+	return user, exists
 }
