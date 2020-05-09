@@ -7,3 +7,4 @@
     - "/user" [GET, POST]
     - "/login" [POST]
 - Chaining Middleware
+- JWT Auth

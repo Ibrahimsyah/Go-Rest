@@ -10,7 +10,7 @@ var userServer = &UserServer{NewMemoryUserStore()}
 var authServer = &AuthServer{userServer.store}
 
 func mainRouter(w http.ResponseWriter, r *http.Request) {
-	http.HandleFunc("/note", applyMiddleware(noteHandler, middleware1, middleware2))
+	http.HandleFunc("/note", applyMiddleware(noteHandler, validateToken))
 	http.HandleFunc("/user", userHandler)
 	http.HandleFunc("/login", loginHandler)
 }
